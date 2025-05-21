@@ -19,14 +19,14 @@ private final TransaccionActivities activities =
         String transaccionActivitiesAbono= activities.abono(accountId, amount);
 
 
-        if (Objects.equals(tipoTransaccion, "cargo")){
+        if ("cargo".equalsIgnoreCase(tipoTransaccion)){
             return "Transacción completa: " + transaccionActivitiesCargo;
-        } else if (Objects.equals(tipoTransaccion, "abono")) {
+        } else if ("abono".equalsIgnoreCase(tipoTransaccion)) {
             return "Transacción completa: " + transaccionActivitiesAbono;
 
         }
         else{
-            return "Transacción no valida";
+            return "Transacción no valida" + tipoTransaccion;
         }
 
     }
